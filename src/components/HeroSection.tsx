@@ -5,7 +5,6 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { useTheme } from "next-themes"
 import { Ripple } from "./magicui/ripple"
-import { Meteors } from "./magicui/meteors"
 import { AuroraText } from "./magicui/aurora-text"
 import { RainbowButton } from "./magicui/rainbow-button"
 

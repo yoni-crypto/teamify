@@ -12,7 +12,7 @@ import Image from "next/image"
 
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false)
-    const [showLogin, setShowLogin] = useState(false)
+    // const [showLogin, setShowLogin] = useState(false)
 
     const navItems = [
         { label: "Home", href: "/" },
@@ -21,10 +21,10 @@ export default function Navbar() {
         { label: "Contact Us", href: "/contact" },
     ]
 
-    const openLogin = () => {
-        setMenuOpen(false)
-        setShowLogin(true)
-    }
+    // const openLogin = () => {
+    //     setMenuOpen(false)
+    //     setShowLogin(true)
+    // }
 
     return (
         <>
