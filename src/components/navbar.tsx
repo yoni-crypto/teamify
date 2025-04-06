@@ -17,7 +17,7 @@ export default function Navbar() {
     const navItems = [
         { label: "Home", href: "/" },
         { label: "Features", href: "/features" },
-        { label: "About Us", href: "/about" },
+        { label: "About Us", href: "/aboutus" },
         { label: "Contact Us", href: "/contact" },
     ]
 
@@ -34,7 +34,18 @@ export default function Navbar() {
                         <div className="bg-orange-500 rounded w-5 h-5" />
                         <span className="text-black dark:text-white">teamify</span>
                     </Link> */}
-                    <Image src="/logo.png" alt="" width={100} height={50} />
+                    <div>
+                        {/* Light mode text logo */}
+                        <Link href="/" className="block dark:hidden text-xl font-bold text-black">
+                            teamify
+                        </Link>
+
+                        {/* Dark mode image logo */}
+                        <Link href="/" className="hidden dark:block">
+                            <Image src="/logo.png" alt="teamify logo" width={100} height={50} />
+                        </Link>
+                    </div>
+
 
                     <nav className="hidden md:flex gap-8 absolute left-1/2 transform -translate-x-1/2">
                         {navItems.map((item) => (
@@ -61,7 +72,8 @@ export default function Navbar() {
 
 
                         {/* Mobile */}
-                        <div className="md:hidden">
+                        <div className="md:hidden flex items-center gap-3">
+                            <ModeToggle />
                             <Sheet open={menuOpen} onOpenChange={setMenuOpen}>
                                 <SheetTrigger aria-label="Open mobile menu">
                                     <Menu className="w-6 h-6" />

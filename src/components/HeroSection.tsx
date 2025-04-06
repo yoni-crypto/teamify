@@ -7,81 +7,72 @@ import { useTheme } from "next-themes"
 import { Ripple } from "./magicui/ripple"
 import { AuroraText } from "./magicui/aurora-text"
 import { RainbowButton } from "./magicui/rainbow-button"
+import { Meteors } from "./magicui/meteors"
 
 export default function HeroSection() {
-    const { resolvedTheme } = useTheme()
-    const isDark = resolvedTheme === "dark"
+  const { resolvedTheme } = useTheme()
+  const isDark = resolvedTheme === "dark"
 
-    return (
-        <div
+  return (
+    <div className={`relative min-h-screen w-full transition-colors duration-500 ${isDark ? 'bg-[#050505] text-white' : 'bg-white text-black'}`}>
+      {/* Meteors Background */}
+      <Meteors number={35} className="absolute inset-0 z-0 pointer-events-none" />
 
-        // style={{
-        //     backgroundImage: "url('/bg.png')",
-        //     backgroundSize: "cover",
-        //     backgroundPosition: "center",
-        //     backgroundRepeat: "no-repeat"
-        // }}
-            className={`relative min-h-screen flex flex-col justify-between px-4 sm:px-8 md:px-16 transition-colors duration-500 ${isDark ? 'bg-[#050505] text-white' : 'bg-white text-black'
-                }`}
-        >
-            {/* Top Nav */}
-            <div className="py-6 flex justify-between items-center w-full max-w-7xl mx-auto">
-                <div className="text-xl sm:text-2xl font-bold">🚀 VirtualOffice</div>
-                <div className="flex items-center gap-4 text-sm">
-                    <Link href="/terms" className="hover:underline opacity-70">Terms</Link>
-                    <Link href="/privacy" className="hover:underline opacity-70">Privacy</Link>
-                </div>
-            </div>
+      <div className="relative z-10 flex flex-col min-h-screen justify-between">
+        {/* Hero Content */}
+        <div className="flex-grow flex items-center justify-center px-4 sm:px-8 w-full">
+          <div className="text-center max-w-4xl w-full space-y-8">
+            <motion.h1
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight"
+            >
+              <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-transparent dark:from-white dark:to-slate-900/10">
+                Welcome To Your <AuroraText>Virtual Office</AuroraText>
+              </span>
+            </motion.h1>
 
-            {/* Hero Content */}
-            <div className="flex flex-col items-center justify-center text-center flex-grow gap-6 max-w-3xl mx-auto px-4">
-                <motion.h1
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight"
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+              className="text-lg md:text-xl opacity-80 px-2 sm:px-10 max-w-3xl mx-auto"
+            >
+              Launch your company in minutes. Collaborate, manage, and grow — all from one digital workspace.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            >
+              <RainbowButton>Instant Demo</RainbowButton>
+              <Link href="/setup-office" className="w-full sm:w-auto">
+                <Button
+                  variant="outline"
+                  className={`w-full sm:w-auto px-6 py-2 text-lg rounded-xl border transition-colors duration-300 ${isDark ? 'text-white border-white hover:bg-white/10' : 'text-black border-black hover:bg-black/5'}`}
                 >
-                    <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center text-5xl font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10">
-                        Welcome To Your <AuroraText>Virtual Office</AuroraText> 
-                    </span>
-                </motion.h1>
-
-                <motion.p
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.5, duration: 0.8 }}
-                    className="text-base sm:text-lg md:text-xl opacity-70 px-2 sm:px-6"
-                >
-
-                    Launch your company in minutes. Collaborate, manage, and grow — all from one digital workspace.
-                </motion.p>
-
-                <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.8 }}
-                    className="flex flex-col sm:flex-row gap-4 mt-4 w-full sm:w-auto"
-                >
-                    <RainbowButton>Instant Demo</RainbowButton>
-                    <Button
-                        variant="outline"
-                        className={`w-full sm:w-auto px-6 py-2 text-lg rounded-xl border ${isDark ? 'text-white border-white' : 'text-black border-black'
-                            }`}
-                    >
-                        Setup Your Company
-                    </Button>
-                </motion.div>
-            </div>
-
-            {/* Footer */}
-            <div className="text-sm opacity-60 text-center py-6">
-                &copy; {new Date().getFullYear()} VirtualOffice Inc.
-            </div>
-            {/* <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border">
-                <Meteors number={30} />
-                
-            </div> */}
-            <Ripple />
+                  Setup Your Company
+                </Button>
+              </Link>
+            </motion.div>
+          </div>
         </div>
-    )
+
+        {/* Footer */}
+        <div className="px-4 sm:px-8 md:px-16 pb-6 flex justify-between items-center w-full max-w-7xl mx-auto">
+          <div className="text-lg font-bold">🚀 VirtualOffice</div>
+          <div className="flex items-center gap-4 text-sm flex-wrap">
+            <Link href="/terms" className="hover:underline opacity-80">Terms</Link>
+            <Link href="/privacy" className="hover:underline opacity-80">Privacy</Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Ripple Effects */}
+      <Ripple />
+    </div>
+  )
 }
