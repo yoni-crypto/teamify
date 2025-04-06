@@ -12,7 +12,6 @@ import Image from "next/image"
 
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false)
-    // const [showLogin, setShowLogin] = useState(false)
 
     const navItems = [
         { label: "Home", href: "/" },
@@ -21,30 +20,29 @@ export default function Navbar() {
         { label: "Contact Us", href: "/contact" },
     ]
 
-    // const openLogin = () => {
-    //     setMenuOpen(false)
-    //     setShowLogin(true)
-    // }
+   
 
     return (
         <>
             <header className="w-full bg-white dark:bg-black text-black dark:text-white px-6 py-4 shadow-md fixed top-0 z-50">
                 <div className="max-w-7xl mx-auto flex items-center justify-between">
-                    {/* <Link href="/" className="text-xl font-bold flex items-center gap-2">
-                        <div className="bg-orange-500 rounded w-5 h-5" />
-                        <span className="text-black dark:text-white">teamify</span>
-                    </Link> */}
+
                     <div>
                         {/* Light mode text logo */}
-                        <Link href="/" className="block dark:hidden text-xl font-bold text-black">
-                            teamify
+                        <Link
+                            href="/"
+                            className="text-xl font-bold flex flex-row items-center gap-2 dark:hidden"
+                        >
+                            <div className="bg-orange-500 rounded w-5 h-5" />
+                            <span className="text-black">teamify</span>
                         </Link>
 
                         {/* Dark mode image logo */}
-                        <Link href="/" className="hidden dark:block">
+                        <Link href="/" className="hidden dark:flex items-center">
                             <Image src="/logo.png" alt="teamify logo" width={100} height={50} />
                         </Link>
                     </div>
+
 
 
                     <nav className="hidden md:flex gap-8 absolute left-1/2 transform -translate-x-1/2">
