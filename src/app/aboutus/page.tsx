@@ -3,10 +3,8 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
-import { useTheme } from "next-themes"
 
 export default function AboutPage() {
-  const { theme } = useTheme()
 
   return (
     <div className="min-h-screen w-full bg-background text-foreground p-6 md:p-12">
@@ -48,7 +46,7 @@ export default function AboutPage() {
         <section className="text-center space-y-4">
           <h2 className="text-2xl font-semibold">Join Us</h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            We're always on the lookout for talented individuals who share our passion for innovation and collaboration. Come build the future of work with us.
+          We&rsquo;re always on the lookout for talented individuals who share our passion for innovation and collaboration. Come build the future of work with us.
           </p>
           <Button className="mt-2 bg-orange-500 hover:bg-orange-600 text-white transition-colors">
             See Open Roles

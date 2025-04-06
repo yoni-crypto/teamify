@@ -3,7 +3,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Mail, Phone, MapPin } from "lucide-react";
-import { motion } from "framer-motion";
 import { FaReact, FaNodeJs, FaDatabase, FaCloud } from "react-icons/fa";
 
 export default function ContactUsPage() {

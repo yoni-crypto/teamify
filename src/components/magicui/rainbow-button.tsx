@@ -9,7 +9,7 @@ interface RainbowButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 export const RainbowButton = React.forwardRef<
   HTMLButtonElement,
   RainbowButtonProps
->(({ children, className, ...props }, ref) => {
+>(({ children, className, ...props }) => {
   return (
     <button
       {...props}
