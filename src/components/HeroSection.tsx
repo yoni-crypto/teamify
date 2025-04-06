@@ -3,15 +3,12 @@
 import { motion } from "framer-motion"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { useTheme } from "next-themes"
 import { Ripple } from "./magicui/ripple"
 import { AuroraText } from "./magicui/aurora-text"
 import { RainbowButton } from "./magicui/rainbow-button"
 import { Meteors } from "./magicui/meteors"
 
 export default function HeroSection() {
-    const { resolvedTheme } = useTheme()
-    const isDark = resolvedTheme === "dark"
 
     return (
         <div className={`relative min-h-screen w-full transition-colors duration-500 dark:bg-background`}>
