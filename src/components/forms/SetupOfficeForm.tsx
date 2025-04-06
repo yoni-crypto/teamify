@@ -33,7 +33,7 @@ export default function SetupOfficeForm() {
 
   return (
     <div
-      className="flex items-center justify-center min-h-screen bg-cover bg-center px-4"
+      className="flex items-center justify-center min-h-screen bg-cover bg-center px-4 mt-4"
       style={{ backgroundImage: "url('/background-office.jpg')" }}
     >
       <div className="w-full max-w-md relative z-10">
