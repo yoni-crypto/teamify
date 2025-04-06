@@ -29,12 +29,26 @@ export default function ContactUsPage() {
         <div className="grid md:grid-cols-3 gap-6">
           <div className="md:col-span-2 space-y-4">
             <div className="flex gap-4">
-              <Input placeholder="Email" className="bg-background" />
-              <Input placeholder="Phone" className="bg-background" />
+              <Input
+                placeholder="Email"
+                className="bg-background focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+              />
+              <Input
+                placeholder="Phone"
+                className="bg-background focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+              />
             </div>
-            <Input placeholder="Name" className="bg-background" />
-            <Textarea placeholder="Message" className="min-h-[100px] bg-background" />
-            <Button className="w-full md:w-auto">Submit</Button>
+            <Input
+              placeholder="Name"
+              className="bg-background focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+            />
+            <Textarea
+              placeholder="Message"
+              className="min-h-[100px] bg-background focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+            />
+            <Button className="w-full md:w-auto bg-orange-500 hover:bg-orange-600 text-white">
+              Submit
+            </Button>
           </div>
 
           {/* Newsletter */}
@@ -45,8 +59,13 @@ export default function ContactUsPage() {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor dapibus leo.
               </p>
               <div className="space-y-2">
-                <Input placeholder="Email" className="bg-background" />
-                <Button className="w-full">Submit</Button>
+                <Input
+                  placeholder="Email"
+                  className="bg-background focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                />
+                <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white">
+                  Submit
+                </Button>
               </div>
             </CardContent>
           </Card>
@@ -56,7 +75,7 @@ export default function ContactUsPage() {
         <div className="grid md:grid-cols-3 gap-6">
           <Card className="shadow-md">
             <CardContent className="p-6 flex items-start gap-4">
-              <Phone className="text-primary mt-1" />
+              <Phone className="text-orange-500 mt-1" />
               <div>
                 <p className="font-semibold">(+251) 123 456 789</p>
                 <p className="text-sm text-muted-foreground">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
@@ -65,7 +84,7 @@ export default function ContactUsPage() {
           </Card>
           <Card className="shadow-md">
             <CardContent className="p-6 flex items-start gap-4">
-              <Mail className="text-primary mt-1" />
+              <Mail className="text-orange-500 mt-1" />
               <div>
                 <p className="font-semibold">contact@ethiopia.dev</p>
                 <p className="text-sm text-muted-foreground">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
@@ -74,7 +93,7 @@ export default function ContactUsPage() {
           </Card>
           <Card className="shadow-md">
             <CardContent className="p-6 flex items-start gap-4">
-              <MapPin className="text-primary mt-1" />
+              <MapPin className="text-orange-500 mt-1" />
               <div>
                 <p className="font-semibold">Addis Ababa, Ethiopia</p>
                 <p className="text-sm text-muted-foreground">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
