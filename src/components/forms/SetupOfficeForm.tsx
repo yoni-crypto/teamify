@@ -3,6 +3,7 @@
 import { useState, ChangeEvent } from "react"
 import Link from "next/link"
 import Image from "next/image"
+import { Camera } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -42,8 +43,8 @@ export default function SetupOfficeForm() {
 
           <CardHeader className="text-center">
             <div className="flex justify-center mb-4">
-              <label htmlFor="logo-upload">
-                <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-orange-500 cursor-pointer hover:scale-105 transition-transform">
+              <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-orange-500 cursor-pointer hover:scale-105 transition-transform">
+                <label htmlFor="logo-upload" className="block w-full h-full">
                   {logoPreview ? (
                     <Image
                       src={logoPreview}
@@ -53,23 +54,28 @@ export default function SetupOfficeForm() {
                       className="object-cover w-full h-full"
                     />
                   ) : (
-                    <div className="w-full h-full bg-orange-100" />
+                    <div className="w-full h-full bg-orange-100 flex items-center justify-center text-orange-500">
+                      <Camera className="w-6 h-6" />
+                    </div>
                   )}
-                </div>
-              </label>
-              {/* Hidden file input */}
-              <input
-                id="logo-upload"
-                type="file"
-                accept="image/*"
-                onChange={handleLogoUpload}
-                className="hidden"
-              />
+
+                  {/* Camera Icon Overlay */}
+                  <div className="absolute bottom-0 right-0 bg-white dark:bg-black p-1 rounded-full border">
+                    <Camera className="w-4 h-4 text-orange-500" />
+                  </div>
+                </label>
+                <input
+                  id="logo-upload"
+                  type="file"
+                  accept="image/*"
+                  onChange={handleLogoUpload}
+                  className="hidden"
+                />
+              </div>
             </div>
             <CardTitle className="text-2xl font-semibold">Set Up Your Office</CardTitle>
             <CardDescription className="mt-1">Fill in your company information</CardDescription>
           </CardHeader>
-
 
           <CardContent>
             <form className="grid gap-4">
@@ -89,7 +95,6 @@ export default function SetupOfficeForm() {
                 <Label htmlFor="website">Your Company Website</Label>
                 <Input id="website" type="url" placeholder="Website Here" />
               </div>
-
               <div className="grid gap-2">
                 <Label>Company Size *</Label>
                 <Select value={companySize} onValueChange={setCompanySize}>
@@ -107,7 +112,6 @@ export default function SetupOfficeForm() {
                 <Label htmlFor="password">Create Password *</Label>
                 <Input id="password" type="password" placeholder="Create Password" />
               </div>
-
               <div className="grid gap-2">
                 <Label htmlFor="confirm-password">Confirm Password</Label>
                 <Input id="confirm-password" type="password" placeholder="Confirm Password" />

@@ -3,7 +3,7 @@ import React from 'react'
 
 const SetupOfficePage = () => {
   return (
-    <div>
+    <div className='mt-8'>
       <SetupOfficeForm/>
     </div>
   )
