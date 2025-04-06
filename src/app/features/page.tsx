@@ -153,6 +153,8 @@ export default function PricingSection() {
                     </div>
                 ))}
             </div>
+            
         </section>
+        
     )
 }

@@ -55,7 +55,9 @@ export default function LoginPage() {
                     </CardContent>
 
                     <CardFooter className="flex flex-col gap-2">
-                        <Button className="w-full">Sign In</Button>
+                        <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white transition-colors duration-300">
+                            Sign In
+                        </Button>
                         <p className="text-sm text-muted-foreground text-center">
                             Don&apos;t have an account?{" "}
                             <Link href="/Register" className="text-primary hover:underline">
@@ -67,6 +69,7 @@ export default function LoginPage() {
                     <BorderBeam duration={4} size={100} />
                 </Card>
             </div>
+            
         </div>
     )
 }
