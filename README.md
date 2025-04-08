@@ -1,55 +1,71 @@
-Sure! Here's the full updated README.md code:
-
+ 
 # Teamify
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Teamify is a modern web app built with [Next.js](https://nextjs.org/), designed to be fast, scalable, and developer-friendly.
 
 ---
 
-## 🚀 Getting Started
+## ⚙️ Getting Started
 
-First, run the development server:
+Follow these steps to set up and run the project locally:
+
+### 1. Clone the Repository
 
 ```bash
-npm run dev     # or
-yarn dev        # or
-pnpm dev        # or
+git clone https://github.com/yoni-crypto/teamify.git
+cd teamify
+
+2. Install Dependencies
+
+Using your preferred package manager:
+
+npm install
+# or
+yarn install
+# or
+pnpm install
+# or
+bun install
+
+3. Start the Development Server
+
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
 bun dev
 
-Then, open http://localhost:3000 in your browser to view the app.
-
-Start editing by modifying app/page.tsx. The page updates automatically as you edit.
+Once running, open http://localhost:3000 in your browser.
 
 
 ---
 
-🖋️ Fonts
+✏️ Start Editing
 
-This project uses next/font to automatically optimize and load the Inter font — a modern typeface designed by Vercel.
+You can start editing the app by modifying:
 
+app/page.tsx
 
----
-
-📚 Learn More
-
-Next.js Documentation – Explore features and API references.
-
-Learn Next.js – Interactive, hands-on tutorial.
-
-Next.js GitHub Repository – Contribute or report issues.
-
+The app will auto-update as you save changes.
 
 
 ---
 
-☁️ Deploy on Vercel
-
-The easiest way to deploy your Next.js app is with Vercel, the creators of Next.js.
-
-Check out the deployment documentation for more details.
-
+🔤 Fonts
 
 ---
 
-Let me know if you want to add a logo, project description, tech stack section, or screenshots!
+🧰 Tech Stack
+
+Framework: Next.js
+
+Styling: Tailwind CSS (optional)
+
+Fonts: Inter
+
+
+
+
 
